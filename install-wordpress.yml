@@ -1,0 +1,13 @@
+- hosts: "{{ host | default('wordpress')}}"
+  become: true
+  vars:
+    wp_version: 5.7.1
+    wp_webserver: nginx
+    wp_mysql_db: 'mariadb'
+    wp_mysql_user: 'wordpress'
+    wp_mysql_password: 'wordpress'
+    wp_admin_email: 'beda@beda.lan'
+    wp_sitename: app.projet.beda.lan
+    wp_install_dir: "/var/www/app.projet.beda.lan"
+  roles:
+    - wordpress
